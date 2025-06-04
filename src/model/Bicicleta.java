@@ -1,7 +1,6 @@
 package model;
 
-public class Bicicleta extends Producto{
-
+public class Bicicleta extends Producto implements Imprimir, Impuesto{
     private int rodado;
     private String color;
 
@@ -9,6 +8,7 @@ public class Bicicleta extends Producto{
         //llamo al constructor vacio de la clase padre Producto
         super();
     }
+
     public Bicicleta(String producto,double precio,String descripcion,
                      int rodado, String color){
         super(producto,precio,descripcion);
@@ -40,5 +40,22 @@ public class Bicicleta extends Producto{
                 ", precio=" + getPrecio() +
                 ", descripcion='" + getDescripcion() + '\'' +
                 " rodado: " + rodado + " color " + color;
+    }
+
+    @Override
+    public void Mostrar(){
+        super.Mostrar();
+        System.out.println("Bici rodado: "+ rodado +
+                " color: " + color);
+    }
+
+    @Override
+    public void MostrarDatos() {
+        System.out.println("Muestra los datos de la bicicleta: " + this.toString() + " otra vez");
+    }
+
+    @Override
+    public void CalcularImpuesto(double precio) {
+        System.out.println(precio * Impuesto.IVA);
     }
 }

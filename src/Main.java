@@ -1,6 +1,6 @@
 import model.Bicicleta;
+import model.Generico;
 import model.Producto;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -19,5 +19,10 @@ public class Main {
             System.out.println("Es una Bici");
         else
             System.out.println("Es un Producto");
+
+        producto1.MostrarBienvenida();
+        producto1.MostrarDatos();
+        System.out.println("El IVA es ");
+        producto1.CalcularImpuesto(producto1.getPrecio());
     }
 }

@@ -18,12 +18,9 @@ public class Producto {
        this.descripcion=descripcion;
    }
 
-
-
     public String getDescripcion() {
         return descripcion;
     }
-
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
@@ -31,7 +28,6 @@ public class Producto {
     public double getPrecio() {
         return precio;
     }
-
     public void setPrecio(double precio) {
         this.precio = precio;
     }
@@ -39,7 +35,6 @@ public class Producto {
     public String getProducto() {
         return producto;
     }
-
     public void setProducto(String producto) {
         this.producto = producto;
     }
@@ -47,7 +42,6 @@ public class Producto {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -62,10 +56,15 @@ public class Producto {
                 '}';
     }
 
+    public void Mostrar(){
+        System.out.println(this.toString());
+    }
+
     @Override
     public boolean equals(Object obj) {
         if ( this == obj) return true;
         if (!(obj instanceof Producto)) return false;
+
         Producto producto1 = (Producto) obj;
         if (Double.compare(producto1.precio,precio)!=0) return false;
         if (!producto.equals(producto1.producto)) return false;
