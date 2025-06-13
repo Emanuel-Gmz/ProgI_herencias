@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.BicicletaException;
+
 public class Bicicleta extends Producto implements Imprimir, Impuesto{
     private int rodado;
     private String color;
@@ -9,9 +11,16 @@ public class Bicicleta extends Producto implements Imprimir, Impuesto{
         super();
     }
 
-    public Bicicleta(String producto,double precio,String descripcion,
-                     int rodado, String color){
+    public Bicicleta(String producto,double precio,String descripcion, int rodado, String color) throws BicicletaException {
+        //llamo al constructor con atributos de la clase padre Producto
+
         super(producto,precio,descripcion);
+        if (rodado < 14)
+        {
+            throw new BicicletaException(1);
+        }
+
+
         this.rodado=rodado;
         this.color=color;
     }
@@ -19,15 +28,12 @@ public class Bicicleta extends Producto implements Imprimir, Impuesto{
     public int getRodado() {
         return rodado;
     }
-
     public void setRodado(int rodado) {
         this.rodado = rodado;
     }
-
     public String getColor() {
         return color;
     }
-
     public void setColor(String color) {
         this.color = color;
     }
